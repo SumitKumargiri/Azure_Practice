@@ -3,7 +3,7 @@
     "Azure_Practice": {
       "commandName": "Project",
       "commandLineArgs": "--port 7187",
-      "launchBrowser": false
+      "launchBrowser": true
     }
   }
 }
