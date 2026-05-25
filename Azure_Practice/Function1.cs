@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
+//using Microsoft.Azure.Management.ContainerRegistry.Models;
 using Microsoft.Extensions.Logging;
 
 namespace Azure_Practice;
@@ -21,5 +22,11 @@ public class Function1
         _logger.LogInformation("C# HTTP trigger function processed a request.");
         string name = req.Query["name"];
         return new OkObjectResult($"Hello {name}");
+    }
+
+    [Function("Timerfunction")]
+    public void TimerRun([TimerTrigger("0 */1 * * * *")] TimerInfo timer)
+    {
+        _logger.LogInformation("Timer Trigger executed");
     }
 }
