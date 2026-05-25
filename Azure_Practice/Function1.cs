@@ -14,6 +14,7 @@ public class Function1
         _logger = logger;
     }
 
+
     [Function("Function1")]
     public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
     {
